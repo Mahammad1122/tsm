@@ -149,7 +149,7 @@ namespace TaskManagement.Dashboard
         {
             DataListItem item = e.Item;
             hfProjectId.Value = (item.FindControl("chkProject") as CheckBox).Text;
-            txtEditProjectName.Text = (item.FindControl("lblProjectName") as Label).Text;
+            txtEditProjectName.Text = (item.FindControl("hlProjectName") as HyperLink).Text;
             txtEditProjectDetails.Text = (item.FindControl("lblProjectDescription") as Label).Text;
             DateTime taskDueDate = Convert.ToDateTime((item.FindControl("lblProjectDueDate") as Label).Text);
             txtEditProjectDeadline.Text = taskDueDate.ToString("yyyy-MM-dd");

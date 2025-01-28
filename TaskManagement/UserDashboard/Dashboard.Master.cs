@@ -15,7 +15,10 @@ namespace TaskManagement.Dashboard
             {
                 if (Convert.ToInt32(Session["userRole"]) == 1)
                 {
-                    menuUser.Items.Remove(menuUser.FindItem("Project"));
+                    if (menuUser.FindItem("Project") != null)
+                    {
+                        menuUser.Items.Remove(menuUser.FindItem("Project"));
+                    }
                 }
             }
         }
