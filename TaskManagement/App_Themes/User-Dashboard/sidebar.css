@@ -1,0 +1,68 @@
+﻿#sidebar{
+    background-color: #FFFFFF;
+    border-right: 1px solid #F5F5F7;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    .logo{
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 2vw;
+        color:#5577FF;
+    }
+    .menu{
+        align-self:flex-start;
+        padding: 30px 0px 10px 15px;
+
+        & li{
+            padding: 5px 15px 5px 15px;
+            margin-bottom: 10px;  
+            border-radius: 10px;
+            transition:200ms linear 0s all;
+            &:hover{
+                background-color: #F5F5F7;
+            }
+            &:hover a{
+                color: #141522;
+            }
+            &:hover a .icon path{
+                fill: #141522;
+            }
+            &:hover a .icon-path{
+                stroke: #141522;
+            }
+            & a{
+                text-decoration: none;
+                color: #8E92BC;
+                font-size: 18px;
+                font-weight: 400;
+                transition:200ms linear 0s all;
+            }
+        }
+    }
+    .icon{
+        border-style: none;
+        vertical-align: middle;
+
+        path{
+            fill: #8E92BC;
+            transition:200ms linear 0s all;
+            /* &:hover{
+                fill: #141522;
+            } */
+        }
+        
+        
+    }
+    .icon-path{
+        stroke:#8E92BC;
+        transition:200ms linear 0s all;
+        /* &:hover{
+             stroke: #141522;
+        } */
+    }
+}

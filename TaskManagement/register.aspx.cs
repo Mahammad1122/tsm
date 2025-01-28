@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Text;
+using TaskManagement.config;
+namespace TaskManagement
+{
+    public partial class register : System.Web.UI.Page
+    {
+        static string conStr = ConfigurationManager.ConnectionStrings["taskManagementDB"].ConnectionString;
+        private SqlConnection con = new SqlConnection(conStr);
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            string hashPassword = PasswordEncryption.HashPassword(txtUserPassword.Text);
+            SqlCommand cmd = new SqlCommand("INSERT INTO users VALUES(@name,@email,@password,@role,@created_at)",con);
+            cmd.Parameters.AddWithValue("@name",txtUserName.Text);
+            cmd.Parameters.AddWithValue("@email", txtUserEmail.Text);
+            cmd.Parameters.AddWithValue("@password",hashPassword);
+            cmd.Parameters.AddWithValue("@role",ddlUserRole.SelectedValue);
+            cmd.Parameters.AddWithValue("@created_at",DateTime.Now.ToShortDateString());
+            try
+            {
+                con.Open();
+                int i = cmd.ExecuteNonQuery();
+                if (i > 0)
+                {
+                    Response.Write("<script>alert('Registered')</script>");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Not Registered')</script>");
+                }
+            }
+            catch (Exception err)
+            {
+                Response.Write("Error = " + err.Message);
+            }
+            finally {
+                con.Close();
+            }
+        }
+    }
+}

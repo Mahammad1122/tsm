@@ -1,0 +1,73 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.overview-container{
+    padding: 15px;
+
+    .overview-wrapper{
+        padding: 10px 10px 25px 10px;
+        .hi{
+
+            .user-name{
+                display: block;
+                font-size: 1.5vw;
+                font-weight: 600;
+                color: #141522;
+            }
+            .information{
+                display: block;
+                font-size: 1vw;
+                font-weight: 400;
+                color: #54577A;
+            }
+        }
+    }
+
+    .overview-operation{
+        padding: 10px 10px 10px 0px;
+        
+        .overview-navigation{
+            padding-bottom: 25px;
+
+            .btn-task-navigation{
+                all:unset;
+                padding: 10px;
+                color: #475467;
+                font-family: "Inter" , sans-serif;
+                font-weight: 600;
+                font-size: 14px;
+                transition: 200ms linear 0s all;
+                &:hover{
+                    color:#5577FF;
+                }
+            }
+        }
+    }
+    .today-task-container{
+        padding: 0px 10px 10px 10px;
+        .title{
+            font-size: 24px;
+            font-weight: 600;
+        }
+    }
+    .project-summary-container{
+        padding: 10px;
+        .wrapper{
+
+            .title{
+                font-size: 18px;
+                font-weight: 500;
+            }
+            .project-ddl{
+                display: inline-block;
+                margin-left: 70px;
+
+                select{
+                    font-size: 14px;
+                    font-weight: 400;
+                    padding: 4px 10px;
+                    border-radius: 25px;
+                    background-color: #d0d5dd;
+                }
+            }
+        }
+    }
+}

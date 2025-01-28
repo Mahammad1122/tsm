@@ -1,0 +1,164 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.task-container{
+    padding: 15px;
+
+    .task-wrapper{
+        padding: 10px 10px 25px 10px;
+        .hi{
+
+            .user-name{
+                display: block;
+                font-size: 1.5vw;
+                font-weight: 600;
+                color: #141522;
+            }
+            .information{
+                display: block;
+                font-size: 1vw;
+                font-weight: 400;
+                color: #54577A;
+            }
+        }
+    }
+
+    .tasks-operation{
+        padding: 10px 10px 10px 0px;
+        
+        .tasks-navigation{
+            padding-bottom: 25px;
+
+            .btn-task-navigation{
+                all:unset;
+                padding: 10px;
+                color: #475467;
+                font-family: "Inter" , sans-serif;
+                font-weight: 600;
+                font-size: 14px;
+                transition: 200ms linear 0s all;
+                &:hover{
+                    color:#5577FF;
+                }
+            }
+    
+        }
+        .tasks-search{
+            padding-bottom: 5px;
+
+            .input-search{
+                margin: 10px;
+                width: 266px;
+                padding: 8px;
+                border-radius: 6px;
+                border: 0.5px solid #BDBDC6;
+                font-family: "Poppins", sans-serif;
+                font-weight: 500;
+                font-size: 12px;
+                &:focus{
+                    outline: 0.5px solid  #393c57;
+                }
+            }
+            .btn-search{
+                padding:6px 22px;
+                border-radius: 8px;
+                background-color: #5577FF;
+                color: #FFFFFF;
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                border: none;
+                transition: 200ms linear 0s all;
+                &:hover{
+                    background-color: #3f5cd1;
+                }
+            }
+        }
+    }
+    .all-task-wrapper{
+        padding: 10px;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        align-items: center;
+        .heading{
+            color: #141522;
+            font-weight: 600;
+            font-size: 2.3vw;
+        }
+        
+    }
+    .all-task-display{
+        padding: 5px 10px;
+
+        .form-container
+        {
+            .input-group{
+                padding: 5px 0px;
+                .label{
+                    display: block;
+                    font-size: 14px;
+                    color: #344054;
+                    padding: 4px 0px;
+                }
+                .input{
+                    width: 266px;
+                    padding: 8px;
+                    border-radius: 6px;
+                    border: 0.5px solid #BDBDC6;
+                    font-family: "Poppins", sans-serif;
+                    font-weight: 500;
+                    font-size: 12px;
+                    &:focus{
+                        outline: 0.5px solid  #393c57;
+                    }
+                }
+                .input2{
+                    width: 266px;
+                    height: 70px;
+                    padding: 8px;
+                    border-radius: 6px;
+                    border: 0.5px solid #BDBDC6;
+                    font-family: "Poppins", sans-serif;
+                    font-weight: 500;
+                    font-size: 12px;
+                    resize: none;
+                    &:focus{
+                        outline: 0.5px solid  #393c57;
+                    }
+                }
+                .drop-down{
+                    width: 286px;
+                    margin-top: 10px;
+                    padding: 8px;
+                    border-radius: 6px;
+                    border: 0.5px solid #BDBDC6;
+                    font-family: "Poppins", sans-serif;
+                    font-weight: 500;
+                    font-size: 12px;
+                    &:focus{
+                        outline: 0.5px solid  #393c57;
+                    }
+                }
+            }
+            .btn{
+                padding: 10px 0px;
+                .btn-create-task{
+                    margin-left: 0px;
+                }
+            }
+        }
+    }
+}
+.btn-create-task{
+    padding: 7px 30px;
+    margin-left: 25px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    background-color: #5577FF;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 200ms linear 0s all;
+    &:hover{
+        background-color: #3f5cd1;   
+    }
+}

@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Dashboard.master.cs" Inherits="TaskManagement.Dashboard.Dashboard"%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script src="js/jquery-3.7.1.min.js" type="text/javascript"></script>
+    <script src="js/dashboard.js" type="text/javascript"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="main">
+        <div class="loader">
+                <div class="loading-wave">
+                  <div class="loading-bar"></div>
+                  <div class="loading-bar"></div>
+                  <div class="loading-bar"></div>
+                  <div class="loading-bar"></div>
+                </div>
+         </div>
+        <div id="sidebar">
+            <div class="logo">
+                TM-SYSTEM
+            </div>
+            <asp:Menu ID="menuUser" CssClass="menu" runat="server" Orientation="Vertical">
+                <Items>
+                    <asp:MenuItem Text="Overview" Value="Overview" 
+                        NavigateUrl="~/UserDashboard/overview.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Task" Value="Task" NavigateUrl="~/UserDashboard/task.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Project" Value="Project" NavigateUrl="~/UserDashboard/project.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Your Team" Value="Your Team"></asp:MenuItem>
+                    <asp:MenuItem Text="Settings" Value="Settings"></asp:MenuItem>
+                </Items>
+            </asp:Menu> 
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    
+</body>
+</html>

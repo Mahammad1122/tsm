@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\Users\Mahammadali\Desktop\project" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="12/07/2024 09:51:59" />
+    <file relUrl="login.aspx" publishTime="11/26/2024 12:29:57" />
+    <file relUrl="App_Themes/User-Dashboard/main.css" publishTime="12/10/2024 21:07:59" />
+    <file relUrl="register.aspx" publishTime="10/28/2024 12:33:36" />
+    <file relUrl="UserDashboard/Dashboard.Master" publishTime="11/29/2024 20:59:08" />
+    <file relUrl="App_Themes/Register/register.css" publishTime="10/28/2024 09:50:18" />
+    <file relUrl="App_Themes/User-Dashboard/task.css" publishTime="12/11/2024 08:25:14" />
+    <file relUrl="bin/TaskManagement.dll" publishTime="12/06/2024 09:58:39" />
+    <file relUrl="App_Data/TMS.mdf" publishTime="11/26/2024 12:39:37" />
+    <file relUrl="App_Themes/User-Dashboard/sidebar.css" publishTime="11/29/2024 21:37:04" />
+    <file relUrl="App_Data/TMS_log.ldf" publishTime="11/26/2024 12:39:37" />
+    <file relUrl="bin/TaskManagement.pdb" publishTime="12/06/2024 09:58:38" />
+    <file relUrl="App_Themes/Login/login.css" publishTime="11/29/2024 19:44:48" />
+    <file relUrl="UserDashboard/task.aspx" publishTime="12/11/2024 08:22:12" />
+  </publishProfile>
+</publishData>

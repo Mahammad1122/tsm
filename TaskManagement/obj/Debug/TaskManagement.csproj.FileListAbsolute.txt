@@ -1,0 +1,5 @@
+C:\Users\Mahammadali\documents\visual studio 2010\Projects\TaskManagement\TaskManagement\bin\TaskManagement.dll
+C:\Users\Mahammadali\documents\visual studio 2010\Projects\TaskManagement\TaskManagement\bin\TaskManagement.pdb
+C:\Users\Mahammadali\documents\visual studio 2010\Projects\TaskManagement\TaskManagement\obj\Debug\TaskManagement.dll
+C:\Users\Mahammadali\documents\visual studio 2010\Projects\TaskManagement\TaskManagement\obj\Debug\TaskManagement.pdb
+C:\Users\Mahammadali\documents\visual studio 2010\Projects\TaskManagement\TaskManagement\obj\Debug\TaskManagement.csprojResolveAssemblyReference.cache
