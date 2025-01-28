@@ -1,4 +1,8 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+.overview-main-container{
+    display: grid;
+    grid-template-columns:auto auto;
+}
 .overview-container{
     padding: 15px;
 
@@ -47,6 +51,62 @@
             font-size: 24px;
             font-weight: 600;
         }
+        .task{
+
+            .row{
+                padding: 5px;
+                display:grid;
+                grid-template-columns: 3% 70% 27%;
+                column-gap: 10px;
+                align-items: center;
+                .box-2{
+                    font-size: 14px;
+                }
+                .box-3{
+                    span{
+                        display: inline-block;
+                        width: 107px;
+                        padding: 5px 10px;
+                        border-radius: 20px;
+                        background-color: rgba(238, 32, 28, 0.18);
+                        text-align: center;
+                        font-size: 12px;
+                        color: #EE201C;
+                    }
+                }
+            }
+            input[type="checkbox"] {
+                -webkit-appearance: none; 
+                -moz-appearance: none;
+                appearance: none;
+                width: 18px;
+                height: 18px; /* Checkbox height */
+                border: 1px solid #141522; /* Border color */
+                border-radius: 100%; /* Border radius to round the corners */
+                background-color: #fff; /* Background color */
+                position: relative;
+                cursor: pointer;
+            }
+            
+            /* Styling for checked state */
+            input[type="checkbox"]:checked {
+                background-color: #5577FF; /* Background color when checked */
+                border-color: #5577FF; /* Border color when checked */
+            }
+            
+            /* Adding check mark when checked */
+            input[type="checkbox"]:checked::after {
+                content: '';
+                position: absolute;
+                left: 5px;
+                top: 0px;
+                width: 5px;
+                height: 9px;
+                border: solid white;
+                border-width: 0 2px 2px 0;
+                transform: rotate(48deg);
+            }
+        }
     }
     .project-summary-container{
         padding: 10px;
@@ -68,6 +128,36 @@
                     background-color: #d0d5dd;
                 }
             }
+        }
+    }
+}
+.side-container{
+    padding: 15px;
+    .card{
+        padding: 15px;
+        background-color: white;
+        margin: 30px 0px;
+        width: 65%;
+        border-radius: 20px;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        .data{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            .value{
+                align-self: flex-end;
+                font-size: 28px;
+            }
+            .icon{
+                padding: 15px;
+                background-color: #fff8e8;
+                border-radius: 20px;
+            }
+        }
+        transition:200ms ease-in all 0s;
+        &:hover{
+            transform: scale(1.05);
         }
     }
 }
