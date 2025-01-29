@@ -61,7 +61,9 @@
     <Content Include="App_Themes\User-Dashboard\overview.css" />
     <Content Include="icon\overview.svg" />
     <Content Include="icon\overview.png" />
+    <Content Include="App_Themes\User-Dashboard\message.css" />
     <Content Include="UserDashboard\js\dashboard.js" />
+    <Content Include="UserDashboard\message.aspx" />
     <Content Include="UserDashboard\project.aspx" />
     <Content Include="UserDashboard\js\jquery-3.7.1.min.js" />
     <Content Include="UserDashboard\js\task.js" />
@@ -83,6 +85,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="config\PasswordEncryption.cs" />
+    <Compile Include="UserDashboard\message.aspx.cs">
+      <DependentUpon>message.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserDashboard\message.aspx.designer.cs">
+      <DependentUpon>message.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserDashboard\project.aspx.cs">
       <DependentUpon>project.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -33,7 +33,7 @@
                             <div class="box-1"> <asp:CheckBox ID="chkTask" runat="server" /> </div>
                             <div class="box-2"><asp:Label ID="lblTaskName" runat="server" Text='<%# Eval("task_name") %>'/></div>
                             <div class="box-3">
-                                <span> <%# Eval("status") %></span>
+                                <span class="status"> <%# Eval("status") %></span>
                             </div>
                         </div>
                     </ItemTemplate>
@@ -98,4 +98,5 @@
             </div>
         </div>    
    </div>
+   <script src="js/overview.js"></script>
 </asp:Content>
