@@ -97,6 +97,23 @@ body{
         .input-validation{
             display: none;
         }
+        .input-file{
+            display: none;
+        }
+        .input-file-label{
+            text-align: center;
+            display: block;
+            padding: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            border-radius: 6px;
+            /* background-color: #efefef; */
+            border: 0.6px solid #D0D5DD;
+            &:hover{
+            background-color: #f0f0f0;
+
+            }
+        }
     }
     .user-option-wrapper{
         padding: 5px 0px 5px 0px;

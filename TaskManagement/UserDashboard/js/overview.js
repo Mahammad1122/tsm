@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $(".notification").hide();
     $("#menuUser ul li a").each(function (index, element) {
         if($(element).text() == " Overview"){
             $(element).css("color","#151222");
@@ -18,5 +19,11 @@ $(document).ready(function () {
             $(element).addClass("completed");
         }
     });
-
+    $(".notification-icon").click(function () { 
+        if($(".notification").is(":visible")){
+            $(".notification").fadeOut();
+        }else{
+            $(".notification").fadeIn();
+        }
+    });
 });

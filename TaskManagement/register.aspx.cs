@@ -17,25 +17,29 @@ namespace TaskManagement
         private SqlConnection con = new SqlConnection(conStr);
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["UserId"] != null) {
+                Response.Redirect("UserDashBoard/overview.aspx");
+            }
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
             string hashPassword = PasswordEncryption.HashPassword(txtUserPassword.Text);
-            SqlCommand cmd = new SqlCommand("INSERT INTO users VALUES(@name,@email,@password,@role,@created_at)",con);
+            string imgUrl = userProfileUpload();
+            SqlCommand cmd = new SqlCommand("INSERT INTO users VALUES(@name,@email,@password,@role,@created_at,@img_url)",con);
             cmd.Parameters.AddWithValue("@name",txtUserName.Text);
             cmd.Parameters.AddWithValue("@email", txtUserEmail.Text);
             cmd.Parameters.AddWithValue("@password",hashPassword);
             cmd.Parameters.AddWithValue("@role",ddlUserRole.SelectedValue);
-            cmd.Parameters.AddWithValue("@created_at",DateTime.Now.ToShortDateString());
+            cmd.Parameters.AddWithValue("@created_at", DateTime.Now.ToShortDateString());
+            cmd.Parameters.AddWithValue("@img_url", imgUrl);
             try
             {
                 con.Open();
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
                 {
-                    Response.Write("<script>alert('Registered')</script>");
+                    Response.Redirect("login.aspx");
                 }
                 else
                 {
@@ -49,6 +53,12 @@ namespace TaskManagement
             finally {
                 con.Close();
             }
+        }
+        private string userProfileUpload() {
+            if (fuUserImage.HasFile) {
+                fuUserImage.SaveAs(Server.MapPath("~/userProfileImage/"+fuUserImage.FileName));
+            }
+            return "~/userProfileImage/" + fuUserImage.FileName;
         }
     }
 }

@@ -20,6 +20,9 @@ namespace TaskManagement.Dashboard
             {
                 Response.Redirect("../login.aspx");
             }
+            else {
+                lblUserName.Text = Session["userName"].ToString();
+            }
             if (!IsPostBack) {
                 bindTaskData("bindData",null);
             }

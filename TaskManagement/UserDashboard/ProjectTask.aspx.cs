@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
-
+using TaskManagement.config;
 namespace TaskManagement.UserDashboard
 {
     public partial class ProjectTask : System.Web.UI.Page
@@ -121,8 +121,20 @@ namespace TaskManagement.UserDashboard
             con.Open();
             if (cmd.ExecuteNonQuery() > 0)
             {
-                bindProjectTaskData("bindData", null);
-                mvTask.ActiveViewIndex = 0;
+                Notification notification = new Notification();
+                int IsSend = notification.sendNotification(Convert.ToInt32(ddlEmployee.SelectedValue), "task", txtTaskName.Text);
+                EmailService email = new EmailService();
+                string msg = "This task is assigned by "+Session["userName"]+"<br/><br/>"+txtTaskDetails.Text;
+                string subject = lblProjectName.Text + " : " + txtTaskName.Text;
+                string assignedUserEmail = ddlEmployee.SelectedItem.Text;
+                if (email.SendEmail(assignedUserEmail, subject, msg) == "1")
+                {
+                    bindProjectTaskData("bindData", null);
+                    mvTask.ActiveViewIndex = 0;
+                }
+                else {
+                    Response.Write("<script>alert('mail not sent to user')</script>");
+                }
             }
             con.Close();
         }

@@ -56,6 +56,11 @@
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="ddlUserRole" CssClass="input-validation" runat="server" ErrorMessage="Select user role">*</asp:RequiredFieldValidator>
                     </div>
+                    <div class="input-group">
+                        <asp:Label ID="lblUserImage" runat="server" Text="User Image" cssClass="label"/>
+                        <asp:Label ID="lblFileUpload" runat="server" Text="No file chosen" AssociatedControlID="fuUserImage" cssClass="input-file-label"/>
+                        <asp:FileUpload ID="fuUserImage" runat="server"  cssClass="input-file"/>
+                    </div>
                     <div class="btn">
                         <asp:Button ID="btnRegister" CssClass="register-btn" runat="server" 
                             Text="Register" onclick="btnRegister_Click" />
@@ -67,5 +72,18 @@
             </div>
         </div>
     </form>
+    <script src="UserDashboard/js/jquery-3.7.1.min.js"></script>
+    <script>
+        $('#fuUserImage').on('change',function (e) { 
+            console.log(e)
+            const file = e.target.files[0];
+            if(file){
+                $('.input-file-label').text(file.name);
+            }
+            else{
+                $('.input-file-label').text("No file chosen");
+            }
+        });
+    </script>
 </body>
 </html>

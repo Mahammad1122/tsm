@@ -84,6 +84,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="config\EmailService.cs" />
+    <Compile Include="config\Notification.cs" />
     <Compile Include="config\PasswordEncryption.cs" />
     <Compile Include="UserDashboard\message.aspx.cs">
       <DependentUpon>message.aspx</DependentUpon>
@@ -148,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminDashboard\" />
+    <Folder Include="userProfileImage\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

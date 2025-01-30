@@ -20,7 +20,7 @@ namespace TaskManagement.UserDashboard
             {
                 Response.Redirect("../login.aspx");
             }
-            bindUserData();   
+            bindUserData();
         }
         private void bindUserData() 
         {
@@ -32,11 +32,13 @@ namespace TaskManagement.UserDashboard
             rpUser.DataSource = ds;
             rpUser.DataBind();
         }
-        private static int ReceiverId = 0;
         protected void rpUser_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName == "Click") {
-                ReceiverId = Convert.ToInt32(e.CommandArgument);
+                string[] cmdArr = e.CommandArgument.ToString().Split('|');
+                hfRecieverId.Value = cmdArr[0];
+                lblUserName.Text = cmdArr[1];
+                userProfileImage.ImageUrl = cmdArr[2];
                 bindMessage();
             }
         }
@@ -44,7 +46,7 @@ namespace TaskManagement.UserDashboard
         {
             SqlCommand cmd = new SqlCommand("SELECT m.id, m.sender_id, u.name AS sender_name, m.receiver_id, m.message_text, m.created_at FROM messages m JOIN users u ON m.sender_id = u.id WHERE (m.sender_id = @userId AND m.receiver_id = @chatUserId) OR (m.sender_id = @chatUserId AND m.receiver_id = @userId) ORDER BY m.created_at ASC",con);
             cmd.Parameters.AddWithValue("@userId", Session["userId"]);
-            cmd.Parameters.AddWithValue("@chatUserId", ReceiverId);
+            cmd.Parameters.AddWithValue("@chatUserId", hfRecieverId.Value);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             sda.Fill(ds);
@@ -58,10 +60,11 @@ namespace TaskManagement.UserDashboard
 
         protected void btnSend_Click(object sender, EventArgs e)
         {
+            Timer1.Enabled = false;
             if (txtMsg.Text.Trim() != "") {
                 SqlCommand cmd = new SqlCommand("INSERT INTO messages VALUES (@sender_id,@receiver_id,@message_text,@created_at)",con);
                 cmd.Parameters.AddWithValue("@sender_id", Session["userId"]);
-                cmd.Parameters.AddWithValue("@receiver_id", ReceiverId);
+                cmd.Parameters.AddWithValue("@receiver_id", hfRecieverId.Value);
                 cmd.Parameters.AddWithValue("@message_text", txtMsg.Text);
                 cmd.Parameters.AddWithValue("@created_at",DateTime.Now);
                 con.Open();
@@ -69,6 +72,9 @@ namespace TaskManagement.UserDashboard
                 {
                     txtMsg.Text = "";
                     bindMessage();
+                    string script = "$('.chat-box').scrollTop($('.chat-box')[0].scrollHeight);";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "ScrollToBottom", script, true);
+                    Timer1.Enabled = true;
                 }
                 else {
                     Response.Write("<script>alert('There was an error to sendind message')</script>");

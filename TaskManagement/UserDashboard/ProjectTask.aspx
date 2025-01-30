@@ -10,6 +10,14 @@
     <form id="form1" runat="server">
     <div>
         <div class="task-container">
+            <div class="project-loader">
+                <div class="loading-wave">
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                    <div class="loading-bar"></div>
+                  </div>
+            </div>
             <asp:HyperLink ID="hlBack" runat="server" Font-Bold="true"  Text="< BACK" NavigateUrl="~/UserDashboard/project.aspx" />
             <div class="task-wrapper"> 
                 <div class="hi">
@@ -163,7 +171,7 @@
             </div>
         </div>
         <script src="js/jquery-3.7.1.min.js" type="text/javascript"></script>
-        <script src="js/task.js" type="text/javascript"></script>
+        <script src="js/projectTask.js" type="text/javascript"></script>
     </div>
     </form>
 </body>

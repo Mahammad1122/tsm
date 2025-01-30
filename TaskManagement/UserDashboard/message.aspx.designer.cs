@@ -40,6 +40,15 @@ namespace TaskManagement.UserDashboard {
         protected global::System.Web.UI.WebControls.Repeater rpUser;
         
         /// <summary>
+        /// userProfileImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image userProfileImage;
+        
+        /// <summary>
         /// lblUserName control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace TaskManagement.UserDashboard {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblUserName;
+        
+        /// <summary>
+        /// hfRecieverId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfRecieverId;
         
         /// <summary>
         /// UpdatePanel1 control.

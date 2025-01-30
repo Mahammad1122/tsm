@@ -35,6 +35,7 @@ namespace TaskManagement
                     Session["userRole"] = sdr["role"];
                     Session["userId"] = sdr["id"].ToString();
                     Session["userName"] = sdr["name"].ToString();
+                    Session["userImage"] = sdr["img_url"].ToString();
                     //set Cookie
                     if (chkRemember.Checked) {
                         HttpCookie userInfo = new HttpCookie("userInfo");
@@ -71,6 +72,7 @@ namespace TaskManagement
                         Session["userRole"] = sdr["role"];
                         Session["userId"] = sdr["id"].ToString();
                         Session["userName"] = sdr["name"].ToString();
+                        Session["userImage"] = sdr["img_url"].ToString();
                         Response.Redirect("UserDashBoard/overview.aspx");
                     }
                 }
