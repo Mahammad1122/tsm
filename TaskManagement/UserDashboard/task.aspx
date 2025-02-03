@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserDashboard/Dashboard.Master" AutoEventWireup="true" CodeBehind="task.aspx.cs" Inherits="TaskManagement.Dashboard.task" Theme="User-Dashboard" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>Task</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="task-container">

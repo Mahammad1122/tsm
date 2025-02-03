@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserDashboard/Dashboard.Master" AutoEventWireup="true" CodeBehind="message.aspx.cs" Inherits="TaskManagement.UserDashboard.message" Theme="User-Dashboard" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<title>Message</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager ID="ScriptManager1" runat="server">

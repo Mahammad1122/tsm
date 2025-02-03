@@ -62,6 +62,9 @@
     <Content Include="App_Themes\User-Dashboard\task.css" />
     <Content Include="App_Themes\User-Dashboard\main.css" />
     <Content Include="App_Themes\User-Dashboard\overview.css" />
+    <Content Include="icon\icon.png" />
+    <Content Include="icon\icon2.png" />
+    <Content Include="icon\icon3.png" />
     <Content Include="icon\overview.svg" />
     <Content Include="icon\overview.png" />
     <Content Include="App_Themes\User-Dashboard\message.css" />

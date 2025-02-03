@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="/icon/icon3.png"/>
 </head>
 <body>
     <form id="form1" runat="server">
