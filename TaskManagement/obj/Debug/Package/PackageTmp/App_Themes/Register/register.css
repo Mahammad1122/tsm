@@ -1,2 +1,170 @@
-﻿body {
+﻿@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+*{
+    margin:0;
+    padding:0;   
+}
+body{
+    background-color: #FFFAFA;
+}
+.main
+{
+     height:100vh;
+     width:100vw;
+     font-family:"Poppins" , sans-serif;
+}
+.main .header
+ {
+    height:10%;
+    /*background-color:Red;*/
+        
+    .logo
+    {
+        color:#5577FF;
+        display:block;
+        font-size:2vw;
+        padding:15px 0px 0px 15px;
+    }
+} 
+.main .container
+{
+    Width:100%;
+    height:auto;        
+    display:flex;
+    /* padding-top:55px; */
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;  
+}
+.container .form-container
+{
+    /* height:350px; */
+    height: auto;
+    width:262px;
+    padding:15px;
+    border:0.5px solid #D0D5DD;
+    border-radius:10px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 64px #0000001e;
+
+    .validation-summary{
+        padding: 0px 15px;
+        color:rgb(199, 31, 31);
+        text-align: right;
+        font-size: 12px;
+        font-weight: 400;
+        ul{
+            list-style: none;
+        }
+    }
+    .welcome-wrapper
+    {
+        font-size: 18px;
+        font-weight: 300;
+    }
+    .continue-wrapper
+    {
+        padding:5px 0px 5px 0px;
+        
+        & span:nth-child(1){
+            display: block;
+            font-size: 22px;
+            font-weight: 500;
+        }
+        & span:nth-child(2){
+            display: block;
+            font-size: 12px;
+            font-weight: 300;
+        }
+    }
+    .input-group{
+        padding: 5px 0px 5px 0px;
+
+        .label{
+            display: block;
+            font-size: 12px;
+            font-weight: 400;
+            padding: 0px 0px 4px 0px;
+        }
+        .input{
+            padding:5px 0px 5px 10px;
+            height: 22px;
+            width: 248px;
+            font-size: 12px;
+            font-weight: 300;
+            border-radius: 6px;
+            border: 0.6px solid #D0D5DD;
+        }
+        .input-validation{
+            display: none;
+        }
+        .input-file{
+            display: none;
+        }
+        .input-file-label{
+            text-align: center;
+            display: block;
+            padding: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            border-radius: 6px;
+            /* background-color: #efefef; */
+            border: 0.6px solid #D0D5DD;
+            &:hover{
+            background-color: #f0f0f0;
+
+            }
+        }
+    }
+    .user-option-wrapper{
+        padding: 5px 0px 5px 0px;
+        font-size: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+
+        & span{
+            display: flex;
+            gap:5px;
+
+            & input[type="checkbox"]{
+                background-color: #5577FF;
+            }
+        }
+        & a{
+            color: #5577FF;
+            text-decoration: none;
+        }
+    }
+    .btn{
+        padding: 10px 0px 10px 0px; 
+        
+        .register-btn{
+            padding: 7.5px 0px 7.5px 0px;
+            width: 262px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius:6px;
+            border:none;
+            color: #ffffff;
+            background-color:#5577FF;
+            transition: 200ms linear 0s all;
+            &:hover{
+                background-color: #4562d4;
+                box-shadow: 0px 0px 10px #03050f5e;
+            }
+        }
+    }
+    .login-wrapper{
+        font-size: 12px;
+        /* padding: 15px 0px 15px 32.5px; */
+        text-align: center;
+        color: #7D7D7D;
+
+        & a{
+            color: #5577FF;
+            text-decoration: none;
+        }
+    }
+
 }

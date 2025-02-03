@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Login</title>
+    <link rel="icon" type="image/x-icon" href="/icon/icon3.png"/>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -25,17 +26,18 @@
                 </div>
                 <div class="input-group">
                     <asp:Label ID="lblUserPassword" runat="server" Text="Password" CssClass="label" />
-                    <asp:TextBox ID="txtUserPassword" runat="server" placeholder="Enter your password" CssClass="input" />
+                    <asp:TextBox ID="txtUserPassword" runat="server" placeholder="Enter your password" TextMode="Password" CssClass="input" />
                 </div>
                 <div class="user-option-wrapper">
                     <span><asp:CheckBox ID="chkRemember" runat="server"  Text="Remember me" /> </span>  
                     <asp:HyperLink ID="hlForgetPassword" NavigateUrl="#" runat="server" Text="Forget Password?" />
                 </div>
                 <div class="btn">
-                    <asp:Button ID="btnLogin" CssClass="login-btn" runat="server" Text="Login" />
+                    <asp:Button ID="btnLogin" CssClass="login-btn" runat="server" Text="Login" 
+                        onclick="btnLogin_Click" />
                 </div>
                 <div class="register-wrapper">
-                    Don't have an Account ? <asp:HyperLink ID="hlRegister" runat="server"  NavigateUrl="#" Text="Register"/>
+                    Don't have an Account ? <asp:HyperLink ID="hlRegister" runat="server"  NavigateUrl="~/register.aspx"     Text="Register"/>
                 </div>
             </div>
         </div>

@@ -26,16 +26,43 @@
             &:hover{
                 background-color: #F5F5F7;
             }
+            &:hover a{
+                color: #141522;
+            }
+            &:hover a .icon path{
+                fill: #141522;
+            }
+            &:hover a .icon-path{
+                stroke: #141522;
+            }
             & a{
                 text-decoration: none;
                 color: #8E92BC;
                 font-size: 18px;
                 font-weight: 400;
                 transition:200ms linear 0s all;
-                &:hover{
-                    color: #141522;
-                }
             }
         }
+    }
+    .icon{
+        border-style: none;
+        vertical-align: middle;
+
+        path{
+            fill: #8E92BC;
+            transition:200ms linear 0s all;
+            /* &:hover{
+                fill: #141522;
+            } */
+        }
+        
+        
+    }
+    .icon-path{
+        stroke:#8E92BC;
+        transition:200ms linear 0s all;
+        /* &:hover{
+             stroke: #141522;
+        } */
     }
 }
