@@ -16,7 +16,7 @@ namespace TaskManagement
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (Session["userLogin"] != null) {
+            if (Session["userId"] != null) {
                 Response.Redirect("UserDashBoard/overview.aspx");
             }
             if (Request.Cookies["userInfo"] != null) {

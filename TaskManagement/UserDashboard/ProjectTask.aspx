@@ -42,6 +42,11 @@
                     <asp:TextBox ID="txtTaskSearch" cssClass="input-search" runat="server" placeholder="Search Task" /> 
                     <asp:Button ID="btnSearch" runat="server" cssClass="btn-search" Text="Search" onclick="btnSearch_Click" 
                         />
+                    <div class="priority-btn-container">
+                        <asp:Button ID="btnNormal" CssClass="btn-priority" Text="Normal" runat="server" onclick="taskFilterStatus"/>
+                        <asp:Button ID="btnMedium" CssClass="btn-priority" Text="Medium" runat="server" onclick="taskFilterStatus"/>
+                        <asp:Button ID="btnHigh" CssClass="btn-priority" Text="High" runat="server" onclick="taskFilterStatus"/>
+                    </div>
                 </div>
             </div>
             <div class="all-task-wrapper">

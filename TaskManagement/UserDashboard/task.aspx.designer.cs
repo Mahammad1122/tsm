@@ -76,6 +76,33 @@ namespace TaskManagement.Dashboard {
         protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
+        /// btnNormal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNormal;
+        
+        /// <summary>
+        /// btnMedium control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnMedium;
+        
+        /// <summary>
+        /// btnHigh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHigh;
+        
+        /// <summary>
         /// lblTaskTitle control.
         /// </summary>
         /// <remarks>
@@ -211,6 +238,15 @@ namespace TaskManagement.Dashboard {
         protected global::System.Web.UI.WebControls.TextBox txtTaskDeadline;
         
         /// <summary>
+        /// lblTaskPriority control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTaskPriority;
+        
+        /// <summary>
         /// RequiredFieldValidator4 control.
         /// </summary>
         /// <remarks>
@@ -337,6 +373,15 @@ namespace TaskManagement.Dashboard {
         protected global::System.Web.UI.WebControls.TextBox txtEditTaskDeadline;
         
         /// <summary>
+        /// lblEditTaskPriority control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEditTaskPriority;
+        
+        /// <summary>
         /// RequiredFieldValidator8 control.
         /// </summary>
         /// <remarks>
@@ -353,6 +398,15 @@ namespace TaskManagement.Dashboard {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlEditTaskPriority;
+        
+        /// <summary>
+        /// lblEditTaskStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblEditTaskStatus;
         
         /// <summary>
         /// RequiredFieldValidator9 control.
@@ -380,5 +434,14 @@ namespace TaskManagement.Dashboard {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnUpdate;
+        
+        /// <summary>
+        /// btnCancelUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancelUpdate;
     }
 }

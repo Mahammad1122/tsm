@@ -48,9 +48,14 @@ namespace TaskManagement.Dashboard
             }
             else if (operation == "statusFilter")
             {
-                cmd = new SqlCommand("SELECT t.* FROM task_master AS t INNER JOIN users AS u ON t.created_by_user = u.id WHERE ((u.id = @userId) AND (u.role = 0) AND (t.task_type = 'personal') OR (u.id = @userId) AND (u.role = 1) AND (t.task_type = 'personal') OR (t.assigned_user_id = @userId)) AND status =@status ORDER BY id DESC", con);
+                cmd = new SqlCommand("SELECT t.* FROM task_master AS t INNER JOIN users AS u ON t.created_by_user = u.id WHERE ((u.id = @userId) AND (u.role = 0) AND (t.task_type = 'personal') OR (u.id = @userId) AND (u.role = 1) AND (t.task_type = 'personal') OR (t.assigned_user_id = @userId)) AND (status =@status OR priority = @status) ORDER BY id DESC", con);
                 cmd.Parameters.AddWithValue("@status", value);
                 cmd.Parameters.AddWithValue("@userId", Session["userId"]);      
+            }
+            else if (operation == "assignedTask")
+            {
+                cmd = new SqlCommand("SELECT * FROM task_master where assigned_user_id = @userId", con);
+                cmd.Parameters.AddWithValue("@userId",value);
             }
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -134,8 +139,14 @@ namespace TaskManagement.Dashboard
             if (btnFilter != null) {
                 if (btnText == null) {
                     btnText = btnFilter.Text;
-                    bindTaskData("statusFilter", btnFilter.Text);
-                    lblTaskTitle.Text = btnFilter.Text + "Task";
+                    if (btnFilter.Text == "Assigned")
+                    {
+                        bindTaskData("assignedTask", Session["userId"].ToString());
+                    }
+                    else {
+                        bindTaskData("statusFilter", btnFilter.Text);
+                    }
+                    lblTaskTitle.Text = btnFilter.Text + " Task";
                     btnCount = 0;
                 }
                 else if (btnText == btnFilter.Text && btnCount < 1)
@@ -146,8 +157,15 @@ namespace TaskManagement.Dashboard
                 }
                 else{
                     btnText = btnFilter.Text;
-                    lblTaskTitle.Text = btnFilter.Text + "Task";
-                    bindTaskData("statusFilter", btnFilter.Text);
+                    if (btnFilter.Text == "Assigned")
+                    {
+                        bindTaskData("assignedTask", Session["userId"].ToString());
+                    }
+                    else {
+                        bindTaskData("statusFilter", btnFilter.Text);
+                    }
+                    lblTaskTitle.Text = btnFilter.Text + " Task";
+                    
                     btnCount = 0;
                 }
             }
@@ -177,6 +195,11 @@ namespace TaskManagement.Dashboard
                 bindTaskData("bindData", null);
             }
             con.Close();
+        }
+
+        protected void btnCancelUpdate_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/UserDashboard/task.aspx");
         }
     }
 }

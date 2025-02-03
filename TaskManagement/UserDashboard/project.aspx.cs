@@ -48,7 +48,7 @@ namespace TaskManagement.Dashboard
             }
             else if (operation == "statusFilter")
             {
-                cmd = new SqlCommand("SELECT * FROM projects WHERE (created_by_user = @userId) AND status =@status ORDER BY id DESC", con);
+                cmd = new SqlCommand("SELECT * FROM projects WHERE (created_by_user = @userId) AND (status=@status) ORDER BY id DESC", con);
                 cmd.Parameters.AddWithValue("@status", value);
                 cmd.Parameters.AddWithValue("@userId", Session["userId"]);      
             }
@@ -171,6 +171,11 @@ namespace TaskManagement.Dashboard
                 bindTaskData("bindData", null);
             }
             con.Close();
+        }
+
+        protected void btnCancelUpdate_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/UserDashboard/project.aspx");
         }
     }
 }

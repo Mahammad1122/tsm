@@ -65,7 +65,7 @@
             <div class="send-msg">
                 <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
                     <ContentTemplate>
-                         <asp:TextBox ID="txtMsg" runat="server" CssClass="input-message" TextMode="MultiLine" placeholder="Send your message..."/>
+                         <asp:TextBox ID="txtMsg" runat="server" CssClass="input-message"  placeholder="Send your message..."/>
                          <asp:Button ID="btnSend" runat="server" CssClass="btn" Text="Send" 
                                  onclick="btnSend_Click">
                         </asp:Button>

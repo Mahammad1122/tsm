@@ -139,10 +139,10 @@
             /* background-color: aquamarine; */
             padding: 10px;
             .input-message{
-                padding: 0px 5px;
+                padding:9px;
                 vertical-align: middle;
-                width: 90%;
-                resize: none;
+                width: 88%;
+                /* resize: none; */
                 margin-right: 10px;
                 border: 1px solid #e2e2e2ba;
                 border-radius: 7px;

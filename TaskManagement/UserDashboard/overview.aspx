@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserDashboard/Dashboard.Master" AutoEventWireup="true" CodeBehind="overview.aspx.cs" Inherits="TaskManagement.UserDashboard.overview" Theme="User-Dashboard" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -68,34 +70,20 @@
                             </div>
                         </div>
                     </ItemTemplate>
+                    <FooterTemplate>
+                        <asp:Label ID="lblNoRecord" CssClass="label-no-record" runat="server" Text="No Today Task" Visible='<%# repeaterTask.Items.Count == 0 %>'></asp:Label>
+                    </FooterTemplate>
                 </asp:Repeater>
             </div>
         </div>
-        <div class="project-summary-container">
-            <div class="wrapper">
-                <span class="title">Project summary</span>
-                <div class="project-ddl">
-                    <asp:DropDownList ID="ddlProject" runat="server" cssClass="ddl" AutoPostBack="True" >
-                        <asp:ListItem>Project</asp:ListItem>
-                    </asp:DropDownList>
-                    <asp:DropDownList ID="ddlProjectManager" runat="server" cssClass="ddl" AutoPostBack="True" >
-                        <asp:ListItem>Project Manager</asp:ListItem>
-                    </asp:DropDownList>
-                    <asp:DropDownList ID="ddlProjectStatus" runat="server" cssClass="ddl" AutoPostBack="True" >
-                        <asp:ListItem>Status</asp:ListItem>
-                    </asp:DropDownList>
-                </div>
-            </div>
-            <div class="project-overview">
-
-            </div>
+            <div class="project-summary-container">
             </div>
         </div> 
         <div class="side-container">
             <div class="card">
-                <div class="title">Weekly Activity</div>
+                <div class="title">Overdue Task</div>
                 <div class="data">
-                    <div class="value">80%</div>
+                    <div class="value"><asp:Label ID="lblTaskOverDue" runat="server" /></div>
                     <div class="icon">
                         <svg width="35" height="32" viewBox="0 0 47 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M35.2854 37.6066L21.0586 23.3798V3.06667C21.0586 1.64914 22.2077 0.5 23.6253 0.5C25.0428 0.5 26.1919 1.64914 26.1919 3.06667V21.2535L38.9152 33.9768L46.1278 26.7642C46.3483 26.5437 46.7253 26.6998 46.7253 27.0116V43.7833C46.7253 43.9766 46.5686 44.1333 46.3753 44.1333H29.6036C29.2917 44.1333 29.1356 43.7563 29.3561 43.5359L35.2854 37.6066Z" fill="#5577FF"/>
@@ -105,9 +93,9 @@
                 </div>
             </div>
             <div class="card">
-                <div class="title">Total tasks Completed</div>
+                <div class="title">Task Completed</div>
                 <div class="data">
-                    <div class="value">40</div>
+                    <div class="value"> <asp:Label ID="lblTaskCompleted" runat="server" /> </div>
                     <div class="icon">
                         <svg width="35" height="38" viewBox="0 0 47 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M21.6556 15.5848C21.6697 15.4024 21.8217 15.2616 22.0046 15.2616H23.5513C23.7311 15.2616 23.8816 15.3978 23.8995 15.5768L24.9618 26.1991L32.4417 30.4733C32.5507 30.5356 32.618 30.6516 32.618 30.7772V32.3034C32.618 32.5341 32.3986 32.7017 32.1759 32.641L20.8658 29.5565C20.7039 29.5123 20.5961 29.3593 20.6089 29.1919L21.6556 15.5848Z" fill="#5577FF"/>
@@ -117,9 +105,9 @@
                 </div>
             </div>
             <div class="card">
-                <div class="title">Project Worked</div>
+                <div class="title">Total Task</div>
                 <div class="data">
-                    <div class="value">105</div>
+                    <div class="value"> <asp:Label ID="lblTotalTask" runat="server" /> </div>
                     <div class="icon">
                         <svg width="35" height="29" viewBox="0 0 46 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M3 36.65C3 37.2299 3.4701 37.7 4.05 37.7H42.55C43.1299 37.7 43.6 37.2299 43.6 36.65V9.92642C43.6 9.34652 43.1299 8.87642 42.55 8.87642H19.24L13.4584 3.01274C13.2611 2.81262 12.9918 2.69995 12.7107 2.69995H4.05C3.4701 2.69995 3 3.17005 3 3.74995V36.65Z" stroke="#5577FF" stroke-width="4.2"/>

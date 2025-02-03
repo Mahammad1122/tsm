@@ -44,7 +44,7 @@
                     </div>
                     <div class="input-group">
                         <asp:Label ID="lblUserConfirmPassword" runat="server" Text="Confirm Password" CssClass="label" />
-                        <asp:TextBox ID="txtUserConfirmPassword" runat="server" placeholder="Enter your Confirm password" CssClass="input" />
+                        <asp:TextBox ID="txtUserConfirmPassword" runat="server" TextMode="Password" placeholder="Enter your Confirm password" CssClass="input" />
                         <asp:CompareValidator ID="CompareValidator1" CssClass="input-validation" ControlToValidate="txtUserConfirmPassword" ControlToCompare="txtUserPassword" runat="server" ErrorMessage="Password must be same">*</asp:CompareValidator>
                     </div>
                     <div class="input-group">
@@ -60,6 +60,7 @@
                         <asp:Label ID="lblUserImage" runat="server" Text="User Image" cssClass="label"/>
                         <asp:Label ID="lblFileUpload" runat="server" Text="No file chosen" AssociatedControlID="fuUserImage" cssClass="input-file-label"/>
                         <asp:FileUpload ID="fuUserImage" runat="server"  cssClass="input-file"/>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" ControlToValidate="fuUserImage" runat="server" CssClass="input-validation" ErrorMessage="Select User Image">*</asp:RequiredFieldValidator>
                     </div>
                     <div class="btn">
                         <asp:Button ID="btnRegister" CssClass="register-btn" runat="server" 

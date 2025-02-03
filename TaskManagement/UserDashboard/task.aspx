@@ -26,6 +26,11 @@
                 <asp:TextBox ID="txtTaskSearch" cssClass="input-search" runat="server" placeholder="Search Task" /> 
                 <asp:Button ID="btnSearch" runat="server" cssClass="btn-search" Text="Search" 
                     onclick="btnSearch_Click"/>
+                <div class="priority-btn-container">
+                    <asp:Button ID="btnNormal" CssClass="btn-priority" Text="Normal" runat="server" onclick="taskFilterStatus"/>
+                    <asp:Button ID="btnMedium" CssClass="btn-priority" Text="Medium" runat="server" onclick="taskFilterStatus"/>
+                    <asp:Button ID="btnHigh" CssClass="btn-priority" Text="High" runat="server" onclick="taskFilterStatus"/>
+                </div>
             </div>
         </div>
         <div class="all-task-wrapper">
@@ -104,8 +109,7 @@
                         <div class="input-group">
                             <asp:Label ID="lblTaskPriority" runat="server" Text="Task Priority" cssClass="label">
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" ControlToValidate="ddlTaskPriority" runat="server" ValidationGroup="taskCreateValidation" ErrorMessage="* Please select task priority" ForeColor="Red" Font-Size="13px"/>                                                            
-                            </asp:Label>
-                            <asp:DropDownList ID="ddlTaskPriority" runat="server" CssClass="drop-down">
+                            </asp:Label><asp:DropDownList ID="ddlTaskPriority" runat="server" CssClass="drop-down">
                                 <asp:ListItem value="">- - - Select Priority - - -</asp:ListItem><asp:ListItem value="High">High</asp:ListItem><asp:ListItem value="Medium">Medium</asp:ListItem><asp:ListItem value="Normal">Normal</asp:ListItem></asp:DropDownList></div><div class="btn">
                             <asp:Button 
                                 ID="btnTaskCreate" ValidationGroup="taskCreateValidation" runat="server" CssClass="btn-create-task" 
@@ -133,22 +137,17 @@
                         <div class="input-group">
                             <asp:Label ID="lblEditTaskPriority" runat="server" Text="Task Priority" cssClass="label">
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator8" ControlToValidate="ddlEditTaskPriority" runat="server" ValidationGroup="taskDditValidation" ErrorMessage="* Please select task priority" ForeColor="Red" Font-Size="13px"/>                                                                                        
-                            </asp:Label>
-                            <asp:DropDownList ID="ddlEditTaskPriority" runat="server" CssClass="drop-down">
-                                <asp:ListItem value="">- - - Select Priority - - -</asp:ListItem><asp:ListItem value="High">High</asp:ListItem><asp:ListItem value="Medium">Medium</asp:ListItem><asp:ListItem value="Normal">Normal</asp:ListItem></asp:DropDownList>
-                        </div>
-                        <div class="input-group">
+                            </asp:Label><asp:DropDownList ID="ddlEditTaskPriority" runat="server" CssClass="drop-down">
+                                <asp:ListItem value="">- - - Select Priority - - -</asp:ListItem><asp:ListItem value="High">High</asp:ListItem><asp:ListItem value="Medium">Medium</asp:ListItem><asp:ListItem value="Normal">Normal</asp:ListItem></asp:DropDownList></div><div class="input-group">
                             <asp:Label ID="lblEditTaskStatus" runat="server" Text="Task Status" cssClass="label">
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" ControlToValidate="ddlEditTaskStatus" runat="server" ValidationGroup="taskEditValidation" ErrorMessage="* Please select task Status" ForeColor="Red" Font-Size="13px"/>                                                                                            
-                            </asp:Label>
-                            <asp:DropDownList ID="ddlEditTaskStatus" runat="server" CssClass="drop-down">
-                                <asp:ListItem value="">- - - Select Status - - -</asp:ListItem><asp:ListItem value="In Progress">In Progress</asp:ListItem><asp:ListItem value="Pending">Pending</asp:ListItem><asp:ListItem value="Completed">Completed</asp:ListItem></asp:DropDownList>
-                        </div>
-                        <div class="btn">
+                            </asp:Label><asp:DropDownList ID="ddlEditTaskStatus" runat="server" CssClass="drop-down">
+                                <asp:ListItem value="">- - - Select Status - - -</asp:ListItem><asp:ListItem value="In Progress">In Progress</asp:ListItem><asp:ListItem value="Pending">Pending</asp:ListItem><asp:ListItem value="Completed">Completed</asp:ListItem></asp:DropDownList></div><div class="btn">
                             <asp:Button 
                                  ID="btnUpdate" runat="server" CssClass="btn-create-task" Text="Update Task" ValidationGroup="taskEditValidation"
                                  onclick="btnUpdate_Click"/>
-                        </div>
+                                  <asp:Button ID="btnCancelUpdate" runat="server" 
+                                 CssClass="btn-cancel-task" Text="Cancel" onclick="btnCancelUpdate_Click" /></div>
                     </div>
                 </asp:View>
             </asp:MultiView> 

@@ -25,15 +25,15 @@
             <div class="logo">
                 TM-SYSTEM
             </div>
-            <asp:Menu ID="menuUser" CssClass="menu" runat="server" Orientation="Vertical">
+            <asp:Menu ID="menuUser" CssClass="menu" runat="server" Orientation="Vertical" 
+                onmenuitemclick="menuUser_MenuItemClick">
                 <Items>
                     <asp:MenuItem Text="Overview" Value="Overview" 
                         NavigateUrl="~/UserDashboard/overview.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Task" Value="Task" NavigateUrl="~/UserDashboard/task.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Project" Value="Project" NavigateUrl="~/UserDashboard/project.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Message" Value="Message" NavigateUrl="~/UserDashboard/message.aspx" ></asp:MenuItem>
-                    <asp:MenuItem Text="Your Team" Value="Your Team"></asp:MenuItem>
-                    <asp:MenuItem Text="Settings" Value="Settings"></asp:MenuItem>
+                    <asp:MenuItem Text="Logout" Value="Logout"></asp:MenuItem>
                 </Items>
             </asp:Menu> 
         </div>

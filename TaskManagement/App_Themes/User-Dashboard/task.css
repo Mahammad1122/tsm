@@ -144,6 +144,41 @@
                     background-color: #3f5cd1;
                 }
             }
+            .priority-btn-container{
+                float: right;
+                margin: 10px 10px 10px 0px;
+                .btn-priority{
+                    display: inline-block;
+                    width: 68px;
+                    padding: 5px 10px;
+                    border-radius: 20px;
+                    text-align: center;
+                    font-size: 12px;
+                    transition: 200ms linear 0s all;
+                    border: none;
+                    &:nth-child(1){
+                        color: #5577FF;
+                        background-color:rgba(85, 119, 255, 0.18) ;
+                    }
+                    &:nth-child(2){
+                        background-color: rgba(231, 110, 11, 0.18);
+                        color: #e76e0b;
+                    }
+                    &:nth-child(3){
+                        background-color: rgba(231, 32, 32, 0.18);
+                        color: rgb(231, 32, 32);
+                    }
+                    &:nth-child(1):hover{
+                        background-color:rgba(85, 119, 255, 0.40) ;
+                    }
+                    &:nth-child(2):hover{
+                        background-color: rgba(231, 110, 11, 0.40);
+                    }
+                    &:nth-child(3):hover{
+                        background-color: rgba(231, 32, 32, 0.40);
+                    }
+                }
+            }
         }
     }
     .all-task-wrapper{
@@ -384,6 +419,20 @@
     transition: 200ms linear 0s all;
     &:hover{
         background-color: #3f5cd1;   
+    }
+}
+.btn-cancel-task{
+    padding: 7px 30px;
+    margin-left: 25px;
+    border-radius: 8px;
+    color: #FFFFFF;
+    background-color: #e93434;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 200ms linear 0s all;
+    &:hover{
+        background-color: #d32121;   
     }
 }
 .btn-container{

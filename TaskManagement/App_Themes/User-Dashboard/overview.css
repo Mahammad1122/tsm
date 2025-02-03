@@ -1,7 +1,7 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 .overview-main-container{
     display: grid;
-    grid-template-columns:auto auto;
+    grid-template-columns:66% auto;
 }
 .overview-container{
     padding: 15px;
@@ -189,6 +189,7 @@
         }
     }
     .project-summary-container{
+        display: none;
         padding: 10px;
         .wrapper{
 

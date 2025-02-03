@@ -123,15 +123,15 @@
                             </asp:Label><asp:TextBox ID="txtEditProjectDeadline" TextMode="Date" runat="server" cssClass="input"/>
                         </div>
                         <div class="input-group">
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" ControlToValidate="ddlEditProjectStatus" runat="server" ValidationGroup="taskEditValidation" ErrorMessage="* Please select task Status" ForeColor="Red" Font-Size="13px" CssClass="task-validation"/>                                                                                            
-                            <asp:DropDownList ID="ddlEditProjectStatus" runat="server" CssClass="drop-down">
-                                <asp:ListItem value="">- - - Select Status - - -</asp:ListItem><asp:ListItem value="In Progress">In Progress</asp:ListItem><asp:ListItem value="Pending">Pending</asp:ListItem><asp:ListItem value="Completed">Completed</asp:ListItem></asp:DropDownList>
-                        </div>
-                        <div class="btn">
+                            <asp:Label ID="lblEditProjectStatus" runat="server" Text="Project Status" cssClass="label">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" ControlToValidate="ddlEditProjectStatus" runat="server" ValidationGroup="taskEditValidation" ErrorMessage="* Please select task Status" ForeColor="Red" Font-Size="13px"/>                                                                                            
+                            </asp:Label><asp:DropDownList ID="ddlEditProjectStatus" runat="server" CssClass="drop-down">
+                                <asp:ListItem value="">- - - Select Status - - -</asp:ListItem><asp:ListItem value="In Progress">In Progress</asp:ListItem><asp:ListItem value="Pending">Pending</asp:ListItem><asp:ListItem value="Completed">Completed</asp:ListItem></asp:DropDownList></div><div class="btn">
                             <asp:Button 
-                                 ID="btnUpdate" runat="server" CssClass="btn-create-task" Text="Update Task" ValidationGroup="taskEditValidation"
+                                 ID="btnUpdate" runat="server" CssClass="btn-create-task" Text="Update Project" ValidationGroup="taskEditValidation"
                                  onclick="btnUpdate_Click"/>
-                        </div>
+                            <asp:Button ID="btnCancelUpdate" runat="server" 
+                                 CssClass="btn-cancel-task" Text="Cancel" onclick="btnCancelUpdate_Click" /></div>
                     </div>
                 </asp:View>
             </asp:MultiView> 

@@ -94,30 +94,30 @@ namespace TaskManagement.UserDashboard {
         protected global::System.Web.UI.WebControls.Repeater repeaterTask;
         
         /// <summary>
-        /// ddlProject control.
+        /// lblTaskOverDue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlProject;
+        protected global::System.Web.UI.WebControls.Label lblTaskOverDue;
         
         /// <summary>
-        /// ddlProjectManager control.
+        /// lblTaskCompleted control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlProjectManager;
+        protected global::System.Web.UI.WebControls.Label lblTaskCompleted;
         
         /// <summary>
-        /// ddlProjectStatus control.
+        /// lblTotalTask control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlProjectStatus;
+        protected global::System.Web.UI.WebControls.Label lblTotalTask;
     }
 }

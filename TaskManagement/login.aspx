@@ -25,7 +25,7 @@
                 </div>
                 <div class="input-group">
                     <asp:Label ID="lblUserPassword" runat="server" Text="Password" CssClass="label" />
-                    <asp:TextBox ID="txtUserPassword" runat="server" placeholder="Enter your password" CssClass="input" />
+                    <asp:TextBox ID="txtUserPassword" runat="server" placeholder="Enter your password" TextMode="Password" CssClass="input" />
                 </div>
                 <div class="user-option-wrapper">
                     <span><asp:CheckBox ID="chkRemember" runat="server"  Text="Remember me" /> </span>  

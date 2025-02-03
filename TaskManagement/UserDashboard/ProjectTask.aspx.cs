@@ -61,7 +61,7 @@ namespace TaskManagement.UserDashboard
             }
             else if (operation == "statusFilter")
             {
-                cmd = new SqlCommand("SELECT * FROM task_master WHERE (project_id = @project_id) AND status =@status ORDER BY id DESC", con);
+                cmd = new SqlCommand("SELECT * FROM task_master WHERE (project_id = @project_id) AND (status =@status OR priority=@status) ORDER BY id DESC", con);
                 cmd.Parameters.AddWithValue("@status", value);
                 cmd.Parameters.AddWithValue("@project_id", projectId);
             }
@@ -187,7 +187,7 @@ namespace TaskManagement.UserDashboard
                 {
                     btnText = btnFilter.Text;
                     bindProjectTaskData("statusFilter", btnFilter.Text);
-                    lblTaskTitle.Text = btnFilter.Text + "Task";
+                    lblTaskTitle.Text = btnFilter.Text + " Task";
                     btnCount = 0;
                 }
                 else if (btnText == btnFilter.Text && btnCount < 1)
@@ -199,7 +199,7 @@ namespace TaskManagement.UserDashboard
                 else
                 {
                     btnText = btnFilter.Text;
-                    lblTaskTitle.Text = btnFilter.Text + "Task";
+                    lblTaskTitle.Text = btnFilter.Text + " Task";
                     bindProjectTaskData("statusFilter", btnFilter.Text);
                     btnCount = 0;
                 }

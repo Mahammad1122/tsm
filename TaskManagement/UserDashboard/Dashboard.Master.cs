@@ -22,5 +22,14 @@ namespace TaskManagement.Dashboard
                 }
             }
         }
+
+        protected void menuUser_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            if (e.Item.Value == "Logout") {
+                Session.Clear();
+                Request.Cookies.Remove("userInfo");
+                Response.Redirect("../login.aspx");
+            }
+        }
     }
 }
