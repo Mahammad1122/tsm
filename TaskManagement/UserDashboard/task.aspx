@@ -18,24 +18,24 @@
         </div>
         <div class="tasks-operation">
             <div class="tasks-navigation">
-                <asp:Button ID="btnInProgress" CssClass="btn-task-navigation" Text="In Progress" runat="server" onclick="taskFilterStatus"/>
-                <asp:Button ID="btnPending" CssClass="btn-task-navigation" Text="Pending" runat="server" onclick="taskFilterStatus" />
-                <asp:Button ID="btnComplete" CssClass="btn-task-navigation" Text="Completed" runat="server" onclick="taskFilterStatus" />
-                <asp:Button ID="btnAssigned" CssClass="btn-task-navigation" Text="Assigned" runat="server" onclick="taskFilterStatus"/>                 
+                <asp:Button ID="btnInProgress" CssClass="btn-task-navigation btn-inprogress" Text="In Progress" runat="server" onclick="taskFilterStatus"/>
+                <asp:Button ID="btnPending" CssClass="btn-task-navigation btn-pending" Text="Pending" runat="server" onclick="taskFilterStatus" />
+                <asp:Button ID="btnCompleted" CssClass="btn-task-navigation btn-completed" Text="Completed" runat="server" onclick="taskFilterStatus" />
+                <asp:Button ID="btnAssigned" CssClass="btn-task-navigation btn-assigned" Text="Assigned" runat="server" onclick="taskFilterStatus"/>                 
             </div>
             <div class="tasks-search">
                 <asp:TextBox ID="txtTaskSearch" cssClass="input-search" runat="server" placeholder="Search Task" /> 
                 <asp:Button ID="btnSearch" runat="server" cssClass="btn-search" Text="Search" 
                     onclick="btnSearch_Click"/>
                 <div class="priority-btn-container">
-                    <asp:Button ID="btnNormal" CssClass="btn-priority" Text="Normal" runat="server" onclick="taskFilterStatus"/>
-                    <asp:Button ID="btnMedium" CssClass="btn-priority" Text="Medium" runat="server" onclick="taskFilterStatus"/>
-                    <asp:Button ID="btnHigh" CssClass="btn-priority" Text="High" runat="server" onclick="taskFilterStatus"/>
+                    <asp:Button ID="btnNormal" CssClass="btn-priority btn-normal" Text="Normal" runat="server" onclick="taskFilterStatus"/>
+                    <asp:Button ID="btnMedium" CssClass="btn-priority btn-medium" Text="Medium" runat="server" onclick="taskFilterStatus"/>
+                    <asp:Button ID="btnHigh" CssClass="btn-priority btn-high" Text="High" runat="server" onclick="taskFilterStatus"/>
                 </div>
             </div>
         </div>
         <div class="all-task-wrapper">
-            <span class="heading"> <asp:Label ID="lblTaskTitle" runat="server" Text="All Tasks" /></span> 
+            <span class="heading"> <asp:Label ID="lblTaskTitle" cssClass="task-title" runat="server" Text="All Tasks" /></span> 
             <asp:Button ID="btnCreateTask" cssClass="btn-create-task" runat="server" 
                 Text="Create Task" onclick="btnCreateTask_Click" />
         </div>

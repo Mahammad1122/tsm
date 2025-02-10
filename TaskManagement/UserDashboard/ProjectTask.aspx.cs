@@ -187,19 +187,19 @@ namespace TaskManagement.UserDashboard
                 {
                     btnText = btnFilter.Text;
                     bindProjectTaskData("statusFilter", btnFilter.Text);
-                    lblTaskTitle.Text = btnFilter.Text + " Task";
+                    lblTaskTitle.Text = btnFilter.Text + " Tasks";
                     btnCount = 0;
                 }
                 else if (btnText == btnFilter.Text && btnCount < 1)
                 {
-                    lblTaskTitle.Text = "All Task";
+                    lblTaskTitle.Text = "All Tasks";
                     bindProjectTaskData("bindData", null);
                     btnCount++;
                 }
                 else
                 {
                     btnText = btnFilter.Text;
-                    lblTaskTitle.Text = btnFilter.Text + " Task";
+                    lblTaskTitle.Text = btnFilter.Text + " Tasks";
                     bindProjectTaskData("statusFilter", btnFilter.Text);
                     btnCount = 0;
                 }

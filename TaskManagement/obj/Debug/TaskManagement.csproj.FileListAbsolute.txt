@@ -3,3 +3,4 @@ C:\Users\Mahammadali\documents\visual studio 2010\Projects\TaskManagement\TaskMa
 C:\Users\Mahammadali\documents\visual studio 2010\Projects\TaskManagement\TaskManagement\obj\Debug\TaskManagement.dll
 C:\Users\Mahammadali\documents\visual studio 2010\Projects\TaskManagement\TaskManagement\obj\Debug\TaskManagement.pdb
 C:\Users\Mahammadali\documents\visual studio 2010\Projects\TaskManagement\TaskManagement\obj\Debug\TaskManagement.csprojResolveAssemblyReference.cache
+C:\Users\Mahammadali\Documents\Visual Studio 2010\Projects\TaskManagement\TaskManagement\bin\OtpSharp.dll

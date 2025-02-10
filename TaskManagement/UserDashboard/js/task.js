@@ -12,6 +12,32 @@ $(document).ready(function () {
             $(element).find(".icon-path").css("stroke","#151222");
         }
     });
+    //add color to  navigation-btn 
+    switch($(".task-title").text())
+    {
+        case "In Progress Tasks":
+            $(".btn-inprogress").css("color", "#e76e0b");
+            break;
+        case "Pending Tasks":
+            $(".btn-pending").css("color", "#e72020");
+            break;
+        case "Completed Tasks":
+            $(".btn-completed").css("color", "#20b334");
+            break;
+        case "Assigned Tasks":
+            $(".btn-assigned").css("color", "#5577FF");
+            break;
+        case "Normal Tasks":
+            $(".btn-normal").css("background-color", "#5577ff66");
+            break;
+        case "Medium Tasks":
+            $(".btn-medium").css("background-color", "#e76e0b66");
+            break;
+        case "High Tasks":
+            $(".btn-high").css("background-color", "#e7202066");
+            break;    
+    }
+    
 });
 $(".checkbox").click(function(e) {
     var id = $(this).find("label").text();
@@ -48,6 +74,7 @@ $(".priority").each(function (index,element) {
      else{
          $(element).css("color", "#5577FF");
      }
+
  });
 $(".task-validation").change(function () { 
     if($(".task-validation").css("visiblity") != "visible"){

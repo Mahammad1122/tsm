@@ -18,9 +18,9 @@
         </div>
         <div class="tasks-operation">
             <div class="tasks-navigation">
-                <asp:Button ID="btnInProgress" CssClass="btn-task-navigation" Text="In Progress" runat="server" onclick="taskFilterStatus"/>
-                <asp:Button ID="btnPending" CssClass="btn-task-navigation" Text="Pending" runat="server" onclick="taskFilterStatus" />
-                <asp:Button ID="btnComplete" CssClass="btn-task-navigation" Text="Completed" runat="server" onclick="taskFilterStatus" />
+                <asp:Button ID="btnInProgress" CssClass="btn-task-navigation btn-inprogress" Text="In Progress" runat="server" onclick="taskFilterStatus"/>
+                <asp:Button ID="btnPending" CssClass="btn-task-navigation btn-pending" Text="Pending" runat="server" onclick="taskFilterStatus" />
+                <asp:Button ID="btnComplete" CssClass="btn-task-navigation btn-completed" Text="Completed" runat="server" onclick="taskFilterStatus" />
                 <!-- <asp:Button ID="btnAssigned" CssClass="btn-task-navigation" Text="Assigned" runat="server" onclick="taskFilterStatus"/>                  -->
             </div>
             <div class="tasks-search">
@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="all-task-wrapper">
-            <span class="heading"> <asp:Label ID="lblTaskTitle" runat="server" Text="All Projects" /></span> 
+            <span class="heading"> <asp:Label ID="lblTaskTitle" cssClass="task-title" runat="server" Text="All Projects" /></span> 
             <asp:Button ID="btnCreateTask" cssClass="btn-create-task" runat="server" 
                 Text="Create Task" onclick="btnCreateTask_Click" />
         </div>
@@ -60,7 +60,9 @@
                                         <div class="col"> <asp:HyperLink ID="hlProjectName" runat="server" Text='<%# Eval("project_name") %>' NavigateUrl='<%# "~/UserDashboard/ProjectTask.aspx?project_id="+Eval("id") %>'/>  </div>
                                         <div class="col"> <asp:Label ID="lblProjectCreated" runat="server" Text='<%# Eval("start_date", "{0:MMM d, yyyy}")%>' /> </div>
                                         <div class="col"> <asp:Label ID="lblProjectDueDate" runat="server" Text='<%# Eval("end_date", "{0:MMM d, yyyy}")%>' /> </div>
-                                        <div class="col"> <asp:Label ID="lblProjectStatus" CssClass="status" runat="server" Text='<%# Eval("status") %>' /> </div>
+                                        <div class="col"> <asp:Label ID="lblProjectStatus" CssClass="status" runat="server" Text='<%# Eval("status") %>' /> 
+                                            
+                                        </div>
                                     </div>      
                                     <div class="project-row2 row2" id='<%# Eval("id") %>'>
                                         <div class="col"> <asp:Label ID="lblProjectDescription" runat="server" Text='<%# Eval("description") %>' /> </div>
@@ -123,11 +125,7 @@
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" ControlToValidate="txtEditProjectDeadline" runat="server" ValidationGroup="taskEditValidation" ErrorMessage="* Please select task details" ForeColor="Red" Font-Size="13px"/>                                                                
                             </asp:Label><asp:TextBox ID="txtEditProjectDeadline" TextMode="Date" runat="server" cssClass="input"/>
                         </div>
-                        <div class="input-group">
-                            <asp:Label ID="lblEditProjectStatus" runat="server" Text="Project Status" cssClass="label">
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" ControlToValidate="ddlEditProjectStatus" runat="server" ValidationGroup="taskEditValidation" ErrorMessage="* Please select task Status" ForeColor="Red" Font-Size="13px"/>                                                                                            
-                            </asp:Label><asp:DropDownList ID="ddlEditProjectStatus" runat="server" CssClass="drop-down">
-                                <asp:ListItem value="">- - - Select Status - - -</asp:ListItem><asp:ListItem value="In Progress">In Progress</asp:ListItem><asp:ListItem value="Pending">Pending</asp:ListItem><asp:ListItem value="Completed">Completed</asp:ListItem></asp:DropDownList></div><div class="btn">
+                        <div class="btn">
                             <asp:Button 
                                  ID="btnUpdate" runat="server" CssClass="btn-create-task" Text="Update Project" ValidationGroup="taskEditValidation"
                                  onclick="btnUpdate_Click"/>

@@ -30,7 +30,11 @@ namespace TaskManagement.UserDashboard
                 bindNotification();
                 getOverviewData();
             }
-            checkTaskDueData();    
+            if (Convert.ToInt32(Session["userRole"]) == 0)
+            {
+                checkProjectDueDate();
+            }
+            checkTaskDueData();
         }
         private void checkTaskDueData() {
             SqlCommand cmd = new SqlCommand("SELECT * FROM task_master where created_by_user = @userId OR assigned_user_id = @userId",con);
@@ -46,6 +50,23 @@ namespace TaskManagement.UserDashboard
                 }
             }
             bindNotification();
+            con.Close();
+        }
+        private void checkProjectDueDate()
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM projects where created_by_user = @userId",con);
+            cmd.Parameters.AddWithValue("@userId", Session["userId"]);
+            con.Open();
+            DateTime tomorrowDate = DateTime.Now.AddDays(1);
+            SqlDataReader sdr = cmd.ExecuteReader();
+            while (sdr.Read())
+            {
+                DateTime DueDate = Convert.ToDateTime(sdr["end_date"]);
+                if(DueDate.ToShortDateString() == tomorrowDate.ToShortDateString()){
+                    string msg = "Project :" + sdr["project_name"] + " is Due on " + DueDate.ToShortDateString();
+                    int IsSend = notification.sendNotification(Convert.ToInt32(Session["userId"]), "projectReminder", msg);
+                }
+            }
             con.Close();
         }
         private void bindTodayTaskData() {

@@ -21,6 +21,7 @@
                         <span>Sign up to</span>
                         <span>Continue</span>
                     </div>
+                    <asp:Label ID="lblAlert" runat="server" CssClass="label-alert"  Visible="false"/>
                     <div class="validation-summary">
                         <asp:ValidationSummary ID="ValidationSummary1" CssClass="summary" runat="server" />
                     </div>
@@ -86,6 +87,11 @@
                 $('.input-file-label').text("No file chosen");
             }
         });
+        if($(".label-alert").css("display") == "block"){
+            setTimeout(()=>{
+                $(".label-alert").fadeOut();
+            },1500)
+        }
     </script>
 </body>
 </html>

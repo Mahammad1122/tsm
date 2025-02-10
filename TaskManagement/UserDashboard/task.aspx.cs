@@ -22,6 +22,10 @@ namespace TaskManagement.Dashboard
             }
             else {
                 lblUserName.Text = Session["userName"].ToString();
+                if (Convert.ToInt32(Session["userRole"]) == 0)
+                {
+                    btnAssigned.Visible = false;
+                }
             }
             if (!IsPostBack) {
                 bindTaskData("bindData",null);
@@ -146,12 +150,12 @@ namespace TaskManagement.Dashboard
                     else {
                         bindTaskData("statusFilter", btnFilter.Text);
                     }
-                    lblTaskTitle.Text = btnFilter.Text + " Task";
+                    lblTaskTitle.Text = btnFilter.Text + " Tasks";
                     btnCount = 0;
                 }
                 else if (btnText == btnFilter.Text && btnCount < 1)
                 {
-                    lblTaskTitle.Text = "All Task";
+                    lblTaskTitle.Text = "All Tasks";
                     bindTaskData("bindData", null);
                     btnCount++;
                 }
@@ -164,7 +168,7 @@ namespace TaskManagement.Dashboard
                     else {
                         bindTaskData("statusFilter", btnFilter.Text);
                     }
-                    lblTaskTitle.Text = btnFilter.Text + " Task";
+                    lblTaskTitle.Text = btnFilter.Text + " Tasks";
                     
                     btnCount = 0;
                 }

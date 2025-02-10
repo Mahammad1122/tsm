@@ -319,33 +319,6 @@ namespace TaskManagement.Dashboard {
         protected global::System.Web.UI.WebControls.TextBox txtEditProjectDeadline;
         
         /// <summary>
-        /// lblEditProjectStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEditProjectStatus;
-        
-        /// <summary>
-        /// RequiredFieldValidator9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator9;
-        
-        /// <summary>
-        /// ddlEditProjectStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEditProjectStatus;
-        
-        /// <summary>
         /// btnUpdate control.
         /// </summary>
         /// <remarks>

@@ -24,6 +24,10 @@ namespace TaskManagement
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
+            if (checkExistUser(txtUserEmail.Text) == 0)
+            {
+                return;
+            }
             string hashPassword = PasswordEncryption.HashPassword(txtUserPassword.Text);
             string imgUrl = userProfileUpload();
             SqlCommand cmd = new SqlCommand("INSERT INTO users VALUES(@name,@email,@password,@role,@created_at,@img_url)",con);
@@ -43,7 +47,8 @@ namespace TaskManagement
                 }
                 else
                 {
-                    Response.Write("<script>alert('Not Registered')</script>");
+                    lblAlert.Text = "Not Registered";
+                    lblAlert.Visible = true;
                 }
             }
             catch (Exception err)
@@ -59,6 +64,22 @@ namespace TaskManagement
                 fuUserImage.SaveAs(Server.MapPath("~/userProfileImage/"+fuUserImage.FileName));
             }
             return "~/userProfileImage/" + fuUserImage.FileName;
+        }
+        private int checkExistUser(string Email)
+        {
+            SqlCommand cmd = new SqlCommand("Select * from users where email = @email", con);
+            cmd.Parameters.AddWithValue("@email", Email);
+            con.Open();
+            SqlDataReader sdr = cmd.ExecuteReader();
+            if (sdr.Read())
+            {
+                lblAlert.Text = "User already exists";
+                lblAlert.Visible = true;
+                return 0;
+            }
+            else {
+                return 1;
+            }
         }
     }
 }

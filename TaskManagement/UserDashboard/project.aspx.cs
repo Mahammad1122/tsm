@@ -26,8 +26,8 @@ namespace TaskManagement.Dashboard
             if (!IsPostBack) {
                 bindTaskData("bindData",null);
             }
+            
         }
-
         protected void btnCreateTask_Click(object sender, EventArgs e)
         {
             mvTask.ActiveViewIndex = mvTask.ActiveViewIndex == 0 ? 1 : 0;
@@ -64,7 +64,7 @@ namespace TaskManagement.Dashboard
             cmd.Parameters.AddWithValue("@project_name",txtProjectName.Text);
             cmd.Parameters.AddWithValue("@description", txtProjectDetails.Text);
             cmd.Parameters.AddWithValue("@due_date", txtProjectDeadline.Text);
-            cmd.Parameters.AddWithValue("@status","In Progress");
+            cmd.Parameters.AddWithValue("@status","Pending");
             cmd.Parameters.AddWithValue("@created_by_user", Convert.ToInt32(Session["userId"]));
             cmd.Parameters.AddWithValue("@created_at",DateTime.Now.ToShortDateString());
             con.Open();
@@ -98,12 +98,11 @@ namespace TaskManagement.Dashboard
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("UPDATE projects SET project_name= @project_name, description = @description, end_date= @due_date, status = @status WHERE id = @id",con);
+            SqlCommand cmd = new SqlCommand("UPDATE projects SET project_name= @project_name, description = @description, end_date= @due_date WHERE id = @id",con);
             cmd.Parameters.AddWithValue("@id", hfProjectId.Value);
             cmd.Parameters.AddWithValue("@project_name", txtEditProjectName.Text);
             cmd.Parameters.AddWithValue("@description",txtEditProjectDetails.Text);
             cmd.Parameters.AddWithValue("@due_date", txtEditProjectDeadline.Text);
-            cmd.Parameters.AddWithValue("@status",ddlEditProjectStatus.SelectedValue);
             con.Open();
             if (cmd.ExecuteNonQuery() > 0) {
                 mvTask.ActiveViewIndex = 0;
@@ -130,18 +129,18 @@ namespace TaskManagement.Dashboard
                 if (btnText == null) {
                     btnText = btnFilter.Text;
                     bindTaskData("statusFilter", btnFilter.Text);
-                    lblTaskTitle.Text = btnFilter.Text + " Project ";
+                    lblTaskTitle.Text = btnFilter.Text + " Projects";
                     btnCount = 0;
                 }
                 else if (btnText == btnFilter.Text && btnCount < 1)
                 {
-                    lblTaskTitle.Text = "All Project ";
+                    lblTaskTitle.Text = "All Projects";
                     bindTaskData("bindData", null);
                     btnCount++;
                 }
                 else{
                     btnText = btnFilter.Text;
-                    lblTaskTitle.Text = btnFilter.Text + " Project ";
+                    lblTaskTitle.Text = btnFilter.Text + " Projects";
                     bindTaskData("statusFilter", btnFilter.Text);
                     btnCount = 0;
                 }
@@ -156,7 +155,6 @@ namespace TaskManagement.Dashboard
             txtEditProjectDetails.Text = (item.FindControl("lblProjectDescription") as Label).Text;
             DateTime taskDueDate = Convert.ToDateTime((item.FindControl("lblProjectDueDate") as Label).Text);
             txtEditProjectDeadline.Text = taskDueDate.ToString("yyyy-MM-dd");
-            ddlEditProjectStatus.SelectedValue = (item.FindControl("lblProjectStatus") as Label).Text;
             mvTask.ActiveViewIndex = 2;
         }
 

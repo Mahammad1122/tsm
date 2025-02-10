@@ -35,7 +35,13 @@
     <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="Google.Authenticator, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\..\Downloads\Google.Authenticator.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="OtpSharp">
+      <HintPath>..\..\..\..\..\Downloads\OtpSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -62,6 +68,7 @@
     <Content Include="App_Themes\User-Dashboard\task.css" />
     <Content Include="App_Themes\User-Dashboard\main.css" />
     <Content Include="App_Themes\User-Dashboard\overview.css" />
+    <Content Include="ForgetPassword.aspx" />
     <Content Include="icon\icon.png" />
     <Content Include="icon\icon2.png" />
     <Content Include="icon\icon3.png" />
@@ -92,7 +99,15 @@
   <ItemGroup>
     <Compile Include="config\EmailService.cs" />
     <Compile Include="config\Notification.cs" />
+    <Compile Include="config\OTPService.cs" />
     <Compile Include="config\PasswordEncryption.cs" />
+    <Compile Include="ForgetPassword.aspx.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgetPassword.aspx.designer.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserDashboard\message.aspx.cs">
       <DependentUpon>message.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

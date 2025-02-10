@@ -22,7 +22,11 @@ namespace TaskManagement.config
             {
                 title = "Task Due Reminder";
             }
-            
+            if (type == "projectReminder")
+            {
+                title = "Project Due Reminder";
+                type = "reminder";
+            }
             SqlCommand cmd = new SqlCommand("INSERT INTO Notifications (UserId, Title, Message, Type, IsRead, CreatedAt) SELECT @UserId, @Title, @Message, @Type, 0, GETDATE() WHERE NOT EXISTS (SELECT 1 FROM Notifications WHERE UserId = @UserId AND Title = @Title AND Message = @Message AND CAST(CreatedAt AS DATE) = CAST(GETDATE() AS DATE))",con);
             cmd.Parameters.AddWithValue("@UserId",userId);
             cmd.Parameters.AddWithValue("@Title",title);

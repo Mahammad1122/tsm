@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
 using TaskManagement.config;
+using System.Threading;
 namespace TaskManagement
 {
     public partial class login : System.Web.UI.Page
@@ -31,13 +32,15 @@ namespace TaskManagement
             con.Open();
             SqlDataReader sdr = cmd.ExecuteReader();
             if (sdr.Read()) {
-                if (PasswordEncryption.VerifyPassword(txtUserPassword.Text, sdr["password"].ToString())) {
+                if (PasswordEncryption.VerifyPassword(txtUserPassword.Text, sdr["password"].ToString()))
+                {
                     Session["userRole"] = sdr["role"];
                     Session["userId"] = sdr["id"].ToString();
                     Session["userName"] = sdr["name"].ToString();
                     Session["userImage"] = sdr["img_url"].ToString();
                     //set Cookie
-                    if (chkRemember.Checked) {
+                    if (chkRemember.Checked)
+                    {
                         HttpCookie userInfo = new HttpCookie("userInfo");
                         userInfo["email"] = txtUserEmail.Text;
                         userInfo["password"] = PasswordEncryption.HashPassword(txtUserPassword.Text);
@@ -47,6 +50,13 @@ namespace TaskManagement
                     }
                     Response.Redirect("UserDashBoard/overview.aspx");
                 }
+                else {
+                    lblAlert.Visible = true;
+                }
+            }
+            else
+            {
+                lblAlert.Visible = true;
             }
             con.Close();
         }

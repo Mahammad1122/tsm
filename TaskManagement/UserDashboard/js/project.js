@@ -55,4 +55,18 @@ $(document).ready(function () {
             $(element).find(".icon-path").css("stroke","#151222");
         }
     });
+    //add color to  navigation-btn 
+    console.log($(".task-title").text())
+    switch($(".task-title").text().trim())
+    {
+        case "In Progress Projects":
+            $(".btn-inprogress").css("color", "#e76e0b");
+            break;
+        case "Pending Projects":
+            $(".btn-pending").css("color", "#e72020");
+            break;
+        case "Completed Projects":
+            $(".btn-completed").css("color", "#20b334");
+            break;   
+    }
 });

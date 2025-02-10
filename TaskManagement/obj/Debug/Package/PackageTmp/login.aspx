@@ -20,13 +20,14 @@
                     <span>Log in to</span>
                     <span>Continue</span>
                 </div>
+                <asp:Label ID="lblAlert" runat="server" CssClass="label-alert" Text="Invalid Credentials" Visible="false"/>
                 <div class="input-group">
-                    <asp:Label ID="lblUserEmail" runat="server" Text="User Email" CssClass="label" />
-                    <asp:TextBox ID="txtUserEmail" runat="server" placeholder="Enter your E-mail" CssClass="input" />
+                    <asp:Label ID="lblUserEmail" runat="server" Text="User email" CssClass="label" />
+                    <asp:TextBox ID="txtUserEmail" runat="server" placeholder="Enter your email" CssClass="input" Required />
                 </div>
                 <div class="input-group">
                     <asp:Label ID="lblUserPassword" runat="server" Text="Password" CssClass="label" />
-                    <asp:TextBox ID="txtUserPassword" runat="server" placeholder="Enter your password" TextMode="Password" CssClass="input" />
+                    <asp:TextBox ID="txtUserPassword" runat="server" placeholder="Enter your password" TextMode="Password" CssClass="input" Required/>
                 </div>
                 <div class="user-option-wrapper">
                     <span><asp:CheckBox ID="chkRemember" runat="server"  Text="Remember me" /> </span>  
@@ -43,5 +44,13 @@
         </div>
     </div>
     </form>
+    <script src="UserDashboard/js/jquery-3.7.1.min.js"></script>
+    <script>
+        if($(".label-alert").css("display") == "block"){
+            setTimeout(()=>{
+                $(".label-alert").fadeOut();
+            },1500)
+        }
+    </script>
 </body>
 </html>
