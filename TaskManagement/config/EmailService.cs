@@ -12,8 +12,8 @@ namespace TaskManagement.config
     {
         private string SmtpServer = "smtp.gmail.com";  // Change for Outlook, Yahoo, etc.
         private int SmtpPort = 587;  // Gmail: 587 for TLS, 465 for SSL
-        private string SenderEmail = "mahammadali2307@gmail.com";  // Change to your email
-        private string SenderPassword = "rdmk jhpl cgpm rpwp"; // Use App Password for security
+        private string SenderEmail = "";  // Change to your email
+        private string SenderPassword = ""; // Use App Password for security
 
 
         /// Sends a simple email
