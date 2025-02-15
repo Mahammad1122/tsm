@@ -64,9 +64,9 @@ namespace TaskManagement.config
             }
             else
             {
+                con.Close();
                 return 0;
             }
-            con.Close();
         }
     }
 }

@@ -46,6 +46,13 @@
                 .user-name{
                     margin-left: 20px;
                     font-size: 14px;
+                    vertical-align:middle;
+                    .label-role
+                    {
+                        display:block;
+                        color:#ccc;
+                        font-size:12px;
+                    }
                 }
             }
             &:hover{

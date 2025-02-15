@@ -37,9 +37,11 @@ namespace TaskManagement
             cmd.Parameters.AddWithValue("@role",ddlUserRole.SelectedValue);
             cmd.Parameters.AddWithValue("@created_at", DateTime.Now.ToShortDateString());
             cmd.Parameters.AddWithValue("@img_url", imgUrl);
+            con.Close();
+            con.Open();
             try
             {
-                con.Open();
+                
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
                 {
@@ -75,9 +77,11 @@ namespace TaskManagement
             {
                 lblAlert.Text = "User already exists";
                 lblAlert.Visible = true;
+                con.Close();
                 return 0;
             }
             else {
+                con.Close();
                 return 1;
             }
         }

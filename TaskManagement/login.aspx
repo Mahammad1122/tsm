@@ -31,7 +31,7 @@
                 </div>
                 <div class="user-option-wrapper">
                     <span><asp:CheckBox ID="chkRemember" runat="server"  Text="Remember me" /> </span>  
-                    <asp:HyperLink ID="hlForgetPassword" NavigateUrl="#" runat="server" Text="Forget Password?" />
+                    <asp:HyperLink ID="hlForgetPassword" NavigateUrl="~/ForgetPassword.aspx" runat="server" Text="Forget Password?" />
                 </div>
                 <div class="btn">
                     <asp:Button ID="btnLogin" CssClass="login-btn" runat="server" Text="Login" 

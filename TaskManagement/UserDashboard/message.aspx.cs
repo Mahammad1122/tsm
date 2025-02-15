@@ -82,5 +82,17 @@ namespace TaskManagement.UserDashboard
                 con.Close();
             }
         }
+
+        protected void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT DISTINCT u.* FROM users u JOIN task_master t ON (u.id = t.created_by_user AND u.role = 0 AND t.assigned_user_id = @userId) OR (u.id = t.assigned_user_id AND u.role = 1 AND t.created_by_user = @userId) AND name LIKE '%'+@userName+'%'", con);
+            cmd.Parameters.AddWithValue("@userId", Session["userId"]);
+            cmd.Parameters.AddWithValue("@userName", txtSearch.Text);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+            rpUser.DataSource = ds;
+            rpUser.DataBind();
+        }
     }
 }

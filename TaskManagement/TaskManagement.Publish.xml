@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <publishData>
-  <publishProfile publishUrl="C:\Users\Mahammadali\Desktop\project" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+  <publishProfile publishUrl="C:\Users\Mahammadali\Desktop\Task management" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
     <file relUrl="icon/overview.svg" publishTime="01/26/2025 17:01:13" />
-    <file relUrl="bin/TaskManagement.pdb" publishTime="02/09/2025 13:48:06" />
+    <file relUrl="bin/TaskManagement.pdb" publishTime="02/10/2025 09:19:38" />
     <file relUrl="App_Themes/Login/login.css" publishTime="02/04/2025 08:50:36" />
     <file relUrl="App_Themes/User-Dashboard/task.css" publishTime="02/06/2025 15:37:37" />
     <file relUrl="UserDashboard/task.aspx" publishTime="02/06/2025 15:35:44" />
-    <file relUrl="bin/TaskManagement.dll" publishTime="02/09/2025 13:48:06" />
+    <file relUrl="bin/TaskManagement.dll" publishTime="02/10/2025 09:19:38" />
     <file relUrl="UserDashboard/js/jquery-3.7.1.min.js" publishTime="12/23/2024 19:38:57" />
     <file relUrl="UserDashboard/js/dashboard.js" publishTime="02/03/2025 20:30:25" />
     <file relUrl="App_Themes/User-Dashboard/message.css" publishTime="02/01/2025 13:41:42" />
     <file relUrl="UserDashboard/project.aspx" publishTime="02/06/2025 15:44:08" />
-    <file relUrl="App_Data/TMS_log.ldf" publishTime="02/09/2025 13:48:06" />
-    <file relUrl="App_Data/TMS.mdf" publishTime="02/09/2025 13:48:06" />
+    <file relUrl="App_Data/TMS_log.ldf" publishTime="02/10/2025 09:14:16" />
+    <file relUrl="App_Data/TMS.mdf" publishTime="02/10/2025 09:14:16" />
     <file relUrl="icon/icon2.png" publishTime="02/03/2025 20:44:33" />
     <file relUrl="App_Themes/User-Dashboard/sidebar.css" publishTime="01/26/2025 18:27:35" />
     <file relUrl="App_Themes/User-Dashboard/main.css" publishTime="01/30/2025 10:45:40" />

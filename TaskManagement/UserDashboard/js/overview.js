@@ -24,8 +24,15 @@ $(document).ready(function () {
     //show hide when notification icon clicked
     $(".notification-icon").click(function () { 
         if($(".notification").is(":visible")){
+           if($(".notification-icon path").hasClass("not-read"))
+           {
+                $(".notification-icon path").css("fill", "#e72020");
+                $(".notification").fadeOut();
+           }
+           else{
             $(".notification-icon path").css("fill", "#6b6e94");
             $(".notification").fadeOut();
+           }
         }else{
             $(".notification-icon path").css("fill", "#475467");    
             $(".notification").fadeIn();
@@ -40,7 +47,15 @@ $(document).ready(function () {
             if(!notificationClicked && !notificationBtnClicked)
             {
                 $(".notification").fadeOut();
-                $(".notification-icon path").css("fill", "#6b6e94");
+                if($(".notification-icon path").hasClass("not-read"))
+                    {
+                         $(".notification-icon path").css("fill", "#e72020");
+                         $(".notification").fadeOut();
+                    }
+                    else{
+                     $(".notification-icon path").css("fill", "#6b6e94");
+                     $(".notification").fadeOut();
+                    }
             }
         }
     });
@@ -51,4 +66,11 @@ $(document).ready(function () {
     // else{
     //    $(".today-task-container").show(); 
     // }
+    if($(".notice-container").find("a").length > 0)
+    {
+        $(".notification-icon path").addClass("not-read");
+    }
+    else{
+        $(".notification-icon path").addClass("read");
+    }
 });

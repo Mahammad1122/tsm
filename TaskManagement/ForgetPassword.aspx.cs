@@ -82,6 +82,7 @@ namespace TaskManagement
                     lblResetAlert.Text = "Password not changed";
                     lblResetAlert.Visible = true;
                 }
+                con.Close();
             }
         }
         private bool checkExistEmail(string email)
@@ -98,6 +99,7 @@ namespace TaskManagement
                     return true;
                 }
             }
+            con.Close();
             return false;
         }
     }

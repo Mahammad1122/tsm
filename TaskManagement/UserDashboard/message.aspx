@@ -7,7 +7,8 @@
     </asp:ScriptManager>
     <div class="message-dashboard">
         <div class="user-container">
-            <asp:TextBox ID="txtSearch" runat="server" cssClass="input-search" placeholder="Search Name"/>
+            <asp:TextBox ID="txtSearch" runat="server" cssClass="input-search" 
+                placeholder="Search Name" ontextchanged="txtSearch_TextChanged" AutoPostBack="true"/>
             <hr/>
             <!-- <div class="user">
                 <div class="user-img">
@@ -22,13 +23,11 @@
                     <div class="user-img">
                         <asp:Image ID="userProfileIamge" ImageUrl='<%# Eval("img_url") %>' runat="server" />
                     </div>
-                    <div class="user-name"><asp:Label ID="lblUserName" runat="server" Text='<%# Eval("name") %>'/></div>
-                    </asp:LinkButton></div></ItemTemplate></asp:Repeater>
-            </div>
-            <div class="blank-container">
-                    <span>Select chat to start conversation.</span>
-            </div>
-            <div class="chat-container">
+                    <div class="user-name"><asp:Label ID="lblUserName" runat="server" Text='<%# Eval("name") %>'/>
+                        <asp:Label ID="lblUserRole" runat="server" Text='<%# Eval("role").ToString() == "0" ? "Project Manager" : "Employee"  %>' CssClass="label-role" />
+                    </div>
+                    </asp:LinkButton></div></ItemTemplate></asp:Repeater></div><div class="blank-container">
+                    <span>Select chat to start conversation.</span> </div><div class="chat-container">
             <div class="chat-header">
                 <div class="user-img">
                     <asp:Image ID="userProfileImage"  runat="server" />

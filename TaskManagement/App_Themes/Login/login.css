@@ -23,6 +23,10 @@ body{
         display:block;
         font-size:2vw;
         padding:15px 0px 0px 15px;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-weight: bold;
     }
 } 
 .main .container

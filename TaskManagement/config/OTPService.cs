@@ -9,7 +9,7 @@ namespace TaskManagement.config
     public class OTPService
     {
         private const int otpLength = 6; // Length of the OTP
-        private const int validDuration = 60; // OTP valid duration in seconds (e.g., 5 minutes)
+        private const int validDuration = 60; // OTP valid duration in seconds (e.g., 1 minutes)
 
         // Generate an OTP using Random
         public static string GenerateOTP()

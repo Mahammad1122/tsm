@@ -40,8 +40,15 @@
             svg{
                 vertical-align: middle;
                 position: relative;
-                path{
+                .read{
                     fill:#8E92BC;
+                    transition: 400ms linear 0s all;
+                    &:hover{
+                        fill: #6b6e94;
+                    }
+                }
+                .not-read{
+                    fill: #e72020;
                     transition: 400ms linear 0s all;
                     &:hover{
                         fill: #6b6e94;

@@ -13,7 +13,7 @@
             <span class="logo">TM-SYSTEM</span>
         </div>
         <div class="container" style="height:90%;justify-content:center;padding-top:0px">
-            <asp:MultiView ID="mvForm" runat="server" ActiveViewIndex="0">
+            <asp:MultiView ID="mvForm" runat="server" ActiveViewIndex="1">
                 <asp:View ID="viewOtpSend" runat="server">
                     <div class="form-container">
                         <div class="continue-wrapper">
@@ -45,6 +45,9 @@
                         <div class="btn">
                             <asp:Button ID="btnVerifyOtp" CssClass="login-btn" runat="server" 
                                 Text="Verify OTP" onclick="btnVerifyOtp_Click" />
+                        </div>
+                        <div class="register-wrapper" style="padding:0px;text-align:center;">
+                            <asp:HyperLink ID="hlLogin" runat="server" NavigateUrl="~/login.aspx" Text="Back to login" />
                         </div>
                     </div>
                 </asp:View>
